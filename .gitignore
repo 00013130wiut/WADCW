@@ -28,7 +28,7 @@ Back13130/logs/
 Back13130/*.log
 Back13130/*.pid
 Back13130/*.db
-Back13130/Migrations/
+
 
 Back13130/.env
 
