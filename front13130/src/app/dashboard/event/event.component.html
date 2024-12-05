@@ -1,0 +1,74 @@
+<section class="p-6 bg-base-200 min-h-screen">
+  <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
+    <!-- Event Header -->
+    <div class="p-6 bg-blue-600 text-white">
+      <h1 class="text-3xl font-bold">{{ event?.title }}</h1>
+      <p class="mt-2">{{ event?.description }}</p>
+      <p class="mt-4 text-sm">
+        Date: <strong>{{ event?.date | date : "fullDate" }}</strong>
+      </p>
+      <p class="text-sm">
+        Location: <strong>{{ event?.location }}</strong>
+      </p>
+      <p class="text-sm">
+        Organizer: <strong>{{ event?.organizer?.name }}</strong>
+      </p>
+    </div>
+
+    <!-- Participants Section -->
+    <div class="p-6">
+      <h2 class="text-2xl font-bold mb-4">Participants</h2>
+
+      <!-- Add Participant Form -->
+      <form (submit)="addParticipant($event)" class="space-y-4">
+        <div class="flex items-center justify-between">
+          <select
+            name="participant"
+            class="select select-bordered w-full max-w-xs p-3"
+          >
+            <option selected>Who is first?</option>
+            <option *ngFor="let user of users" [value]="user.id">
+              {{ user.name }}
+            </option>
+          </select>
+          <div>
+            <button type="submit" class="btn btn-primary mx-4">
+              Add Participant
+            </button>
+          </div>
+        </div>
+      </form>
+
+      <!-- Participants Table -->
+      <div class="overflow-x-auto mt-6">
+        <table class="table table-zebra w-full">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let participant of event!.participants; let i = index">
+              <td>{{ i + 1 }}</td>
+              <td>{{ participant.user!.name }}</td>
+              <td>{{ participant.user!.email }}</td>
+              <td>{{ participant.user!.role }}</td>
+              <td>
+                <button
+                  class="btn btn-error btn-sm"
+                  (click)="removeParticipant(participant.id)"
+                >
+                  Remove
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>

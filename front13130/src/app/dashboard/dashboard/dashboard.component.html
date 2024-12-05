@@ -1,0 +1,108 @@
+<h1 class="mx-10 text-5xl">Events</h1>
+<div class="p-10">
+  <div class="">
+    <full-calendar *ngIf="calendarVisible()" [options]="calendarOptions()">
+    </full-calendar>
+  </div>
+</div>
+
+<dialog id="my_modal_1" class="modal">
+  <div class="modal-box">
+    <form
+      (submit)="handleNewEvent($event)"
+      class="space-y-4 p-6 bg-base-200 rounded-lg shadow-lg"
+    >
+      <h2 class="text-2xl font-bold text-center">Create Event</h2>
+
+      <!-- Event Title -->
+      <label class="form-control w-full max-w-xs">
+        <div class="label">
+          <span class="label-text">What is Event Title?</span>
+        </div>
+        <input
+          type="text"
+          placeholder="Type here"
+          class="input input-bordered w-full max-w-xs"
+          name="title"
+        />
+        <div class="label">
+          <span class="label-text-alt">Bottom Left label</span>
+        </div>
+      </label>
+      <!-- Event Description -->
+      <label class="form-control w-full max-w-xs">
+        <div class="label">
+          <span class="label-text">Description</span>
+        </div>
+        <input
+          type="text"
+          placeholder="Type here"
+          class="input input-bordered w-full max-w-xs"
+          name="description"
+        />
+        <div class="label">
+          <span class="label-text-alt">Bottom Left label</span>
+        </div>
+      </label>
+
+      <!-- Event Date -->
+      <label class="form-control w-full max-w-xs">
+        <div class="label">
+          <span class="label-text">What is Event Date?</span>
+          <span class="label-text-alt">{{ selectedDate?.toDateString() }}</span>
+        </div>
+        <input
+          type="time"
+          placeholder="Type here"
+          class="input input-bordered w-full max-w-xs"
+          name="date"
+        />
+        <div class="label">
+          <span class="label-text-alt">Bottom Left label</span>
+        </div>
+      </label>
+
+      <!-- Event Location -->
+      <label class="form-control w-full max-w-xs">
+        <div class="label">
+          <span class="label-text">What is Event Location?</span>
+        </div>
+        <input
+          type="text"
+          placeholder="Type here"
+          class="input input-bordered w-full max-w-xs"
+          name="location"
+        />
+        <div class="label">
+          <span class="label-text-alt">Bottom Left label</span>
+        </div>
+      </label>
+
+      <!-- Event Organizer -->
+      <label class="form-control w-full max-w-xs">
+        <div class="label">
+          <span class="label-text">Organizer</span>
+        </div>
+        <select name="userId" class="select select-bordered">
+          <option disabled selected>Pick one</option>
+          <
+          <option value="1">Organizer 1</option>
+          <option value="2">Organizer 2</option>
+          <option value="3">Organizer 3</option>
+        </select>
+        <div class="label">
+          <span class="label-text-alt">Alt label</span>
+        </div>
+      </label>
+
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-primary">Create Event</button>
+    </form>
+    <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn">Close</button>
+      </form>
+    </div>
+  </div>
+</dialog>
