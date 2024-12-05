@@ -54,7 +54,8 @@ namespace Back13130.Controllers
 
             // Generate JWT token
             var token = jwtService.GenerateJwtToken(user);
-            return Ok(new { Token = token });
+
+            return Ok(new { Token = token, id=user.Id, name=user.Name,email=user.Email, role=user.Role });
         }
 
         /// <summary>

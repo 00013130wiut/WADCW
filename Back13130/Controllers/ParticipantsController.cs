@@ -40,9 +40,19 @@ namespace Back13130.Controllers
             return Ok(result);
         }
 
-       
 
-        
+        [HttpDelete("{id}")]
+       
+        public async Task<IActionResult> Delete(int id)
+        {
+            await _participantRepository.Delete(id);
+
+            
+            return Ok();
+        }
+
+
+
     }
     public class ParticipantResponce
     {

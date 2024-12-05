@@ -167,11 +167,7 @@ namespace Back13130.Controllers
                 return NotFound("Event not found.");
             }
 
-            var user = await _participantRepository.GetUserByIdAsync(eventId,userId);
-            if (user == null)
-            {
-                return NotFound("User not found.");
-            }
+           
 
             // Add the user to the event's participants
             await _participantRepository.AddParticipantToEventAsync(eventId, userId);
@@ -199,11 +195,7 @@ namespace Back13130.Controllers
                 return NotFound("Event not found.");
             }
 
-            var user = await _participantRepository.GetUserByIdAsync(eventId,userId);
-            if (user == null)
-            {
-                return NotFound("User not found.");
-            }
+           
 
             // Remove the user from the event's participants
             await _participantRepository.RemoveParticipantToEventAsync(eventId, userId);

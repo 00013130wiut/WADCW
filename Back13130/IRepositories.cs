@@ -10,6 +10,8 @@
         Task<Participant> GetUserByIdAsync(int eventId, int userId);
         Task AddParticipantToEventAsync(int eventId, int userId);
         Task RemoveParticipantToEventAsync(int eventId, int userId);
+
+        Task Delete(int id);
     }
     public interface IEventRepository
     {

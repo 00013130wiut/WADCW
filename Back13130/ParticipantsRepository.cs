@@ -87,7 +87,19 @@ namespace Back13130
         }
 
 
-       
+        public async Task Delete(int id)
+        {
+            var participant = await _context.Participants.FirstOrDefaultAsync(p=>p.Id==id);
+            if (participant == null)
+            {
+                throw new InvalidOperationException("Participant not found in this event.");
+            }
+
+            _context.Participants.Remove(participant);
+            await _context.SaveChangesAsync();
+        }
+
+
     }
 
 }

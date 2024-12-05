@@ -15,7 +15,7 @@
         public string Password { get; set; }
 
         /// <example>User</example>
-        public string Role { get; set; } // Example: Admin, User, Organizer
+        public string? Role { get; set; } // Example: Admin, User, Organizer
     }
 
     public class UserResponce
