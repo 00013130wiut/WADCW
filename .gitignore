@@ -1,0 +1,56 @@
+# Ignore all files in root unless specifically needed
+node_modules/
+dist/
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Frontend (Angular)
+front/node_modules/
+front/dist/
+front/coverage/
+front/src/environments/environment*.ts
+front/npm-debug.log*
+front/yarn-debug.log*
+front/yarn-error.log*
+front/.angular/cache/
+
+# Backend (ASP.NET Core)
+Back13130/.vs
+Back13130/bin/
+Back13130/obj/
+Back13130/out/
+Back13130/wwwroot/
+Back13130/logs/
+Back13130/*.log
+Back13130/*.pid
+Back13130/*.db
+Back13130/Migrations/
+
+Back13130/.env
+
+# IDE-specific files
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# System-specific files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+~$*
+*.orig
+
+# Package Manager lock files
+front/package-lock.json
+front/yarn.lock
+front/pnpm-lock.yaml
