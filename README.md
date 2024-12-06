@@ -1,3 +1,5 @@
+# **Project Selection**
+13139/20=656,5 so having remainder is 5. Cprsepondin project was selected 
 # **Event Management System**
 
 An **Event Management System** built using **ASP.NET Core** for the backend and **Angular 19** for the frontend. This application allows users to create, manage, and participate in events. It includes features like event creation, participant management, and drag-and-drop functionality for event rescheduling.
